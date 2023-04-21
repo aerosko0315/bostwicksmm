@@ -13,7 +13,7 @@
     }
 ?>
 <section id="<?php echo esc_attr($id); ?>" class="image-overlay<?php echo esc_attr($classes); ?>">
-    <?php echo wp_get_attachment_image(28, 'image-overlay', false, array('class' => 'image-overlay__image', 'alt' => 'contact')); ?>
+    <?php echo wp_get_attachment_image(get_field( 'image' ), 'image-overlay-large', false, array('class' => 'image-overlay__image', 'alt' => get_field( 'title' ))); ?>
     <div class="image-overlay__inner">
         <div class="image-overlay__content">
             <h2><?php the_field( 'title' ); ?></h2>

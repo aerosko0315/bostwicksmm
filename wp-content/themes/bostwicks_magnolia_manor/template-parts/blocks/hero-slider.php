@@ -19,7 +19,7 @@
             <?php while( have_rows( 'hero_images' ) ): the_row(); ?>
             <?php $active = get_row_index() === 1 ? ' active' : ''; ?>
             <?php $image = get_sub_field( 'image' ); ?>
-            <?php echo wp_get_attachment_image($image, 'hero', false, array('class' => 'hero__image js-hero-slider-image'. $active, 'alt' => 'hero')); ?>
+            <?php echo wp_get_attachment_image($image, 'hero-large', false, array('class' => 'hero__image js-hero-slider-image'. $active, 'alt' => 'hero')); ?>
             <?php endwhile; ?>
         </div>
         <?php endif; ?>

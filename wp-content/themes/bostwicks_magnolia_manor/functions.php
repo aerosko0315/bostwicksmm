@@ -199,11 +199,12 @@ if( class_exists('ACF') ) {
 /**
  * Add image sizes
  */
-add_image_size('hero-large', 1750, 1094);
-add_image_size('hero', 1440, 900);
+add_image_size('hero-large', 1750, 900, true);
+add_image_size('hero', 1440, 900, true);
 add_image_size('intro-thumb', 275, 390, true);
 add_image_size('property', 724, 448, true);
 add_image_size('image-overlay', 1440, 765, true);
+add_image_size('image-overlay-large', 1750, 765, true);
 
 /**
  * Create theme options
