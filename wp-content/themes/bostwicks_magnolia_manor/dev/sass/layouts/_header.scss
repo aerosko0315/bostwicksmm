@@ -1,0 +1,313 @@
+.header {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    top: 20px;
+
+    @include max-breakpoint(tablet) {
+        top: 10px;   
+    }
+}
+
+.header__inner {
+    max-width: 1370px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 25px;
+    padding-right: 15px;
+}
+
+.header__burger-menu {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.header__col {
+    flex: 1;
+}
+
+.header__left-nav {
+    @include max-breakpoint(small-desktop) {
+        max-width: 32px;
+    }
+}
+
+.header__burger-menu--svg {
+    width: 32px;
+    height: 21px;
+    display: block;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+    margin-top: 42px;
+
+    @include max-breakpoint(tablet) {
+        margin-top: 30.5px;   
+    }
+}
+
+.header__nav-link {
+    font-family: var(--font-nsjpmedium);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 5.2px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    line-height: 20px;
+    margin-left: 50px;
+    @include transition;
+
+    &:hover {
+        color: var(--color-tan);
+    }
+
+    @include max-breakpoint(desktop) {
+        margin-left: 30px;
+    }
+
+    @include max-breakpoint(small-desktop) {
+        display: none;
+    }
+}
+
+.header__button {
+    min-width: 210px;    
+}
+
+.header__right-nav {
+    text-align: right;
+    margin-top: 20px;
+    
+    @include max-breakpoint(small-desktop) {
+        display: none;
+    }
+
+}
+
+.header__logo {
+    text-align: center;
+}
+
+.header__logo-image {
+    @include max-breakpoint(tablet) {
+        max-width: 168.33px;
+        height: auto;
+    }
+}
+
+.header__logo-link {
+    margin-right: 10px;
+
+    @include max-breakpoint(small-desktop) {
+        display: inline-block;
+        margin-left: -42px;
+    }
+}
+
+.side-menu {
+    position: fixed;
+    background-color: var(--color-dark);
+    max-width: 650px;
+    width: 100%;
+    z-index: 3;
+    height: 100%;
+    left: 0;
+    top: 0; 
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.4);
+    transform: translateX(-120%);
+    overflow-y: auto;
+    @include transition;
+
+    @include max-breakpoint(tablet) {
+        max-width: 375px;
+    }
+
+    &.open {
+        transform: translateX(0);
+    }
+
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-tan);
+        border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-grey);
+    }
+}
+
+.side-menu__inner {
+    padding: 67px 59px;
+
+    @include max-breakpoint(tablet) {
+        padding: 35px 28px 35px 29px;
+    }
+}
+
+.side-menu__top {
+    display: flex;
+
+    @include max-breakpoint(tablet) {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.side-menu__close {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.side-menu__close--svg {
+    display: block;
+    width: 31.82px;
+    height: 31.82px;
+}
+
+.side-menu__nav {
+    padding-left: 85px;
+
+    @include max-breakpoint(tablet) {
+        padding-left: 0;
+    }
+}
+
+.side-menu__nav-title {
+    font-family: var(--font-quentin);
+    color: var(--color-orange);
+    font-size: 40px;
+    line-height: 1.2;
+    margin-left: 53px;
+
+    @include max-breakpoint(tablet) {
+        font-size: 60px;
+        margin-left: 0;
+        line-height: 45px;
+    }
+}
+
+.side-menu__nav-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 44px;    
+    margin-bottom: 0;
+
+    @include max-breakpoint(tablet) {
+        margin-top: 35px;
+    }
+
+    > li {
+        margin-bottom: 21px;
+
+        @include max-breakpoint(tablet) {
+            margin-bottom: 40px;
+        }
+
+        @include max-breakpoint(extra-small) {
+            margin-bottom: 25px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        > a {
+            font-family: var(--font-cgsemibold);
+            font-size: 36px;
+            color: var(--color-white);
+            line-height: 1.2;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            @include transition;
+
+            @include max-breakpoint(tablet) {
+                font-size: 32px;
+            }
+
+            @include max-breakpoint(extra-small) {
+                font-size: 26px;
+                margin-top: 6px;
+            }
+
+            &:hover {
+                color: var(--color-tan);
+            }
+        }
+    }
+}
+
+.side-menu__nav-sublist {
+    list-style: none;
+    padding-left: 30px;
+    margin-top: 12px;
+
+    @include max-breakpoint(tablet) {
+        padding-left: 19px;
+    }
+
+    @include max-breakpoint(extra-small) {
+        padding-left: 5px;
+    }
+
+    > li {
+        margin-bottom: 7px;
+
+        @include max-breakpoint(tablet) {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @include max-breakpoint(extra-small) {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            content: "—";
+            color: var(--color-orange);
+            font-family: var(--font-nsjpmedium);
+            font-size: 16px;
+            line-height: 2;
+        }
+
+        > a {
+            font-family: var(--font-nsjpmedium);
+            font-size: 16px;
+            letter-spacing: 5.6px;
+            line-height: 2;
+            color: var(--color-offwhite);
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 10px;
+            text-transform: uppercase;
+            @include transition;
+
+            @include max-breakpoint(tablet) {
+                font-size: 12px;
+                letter-spacing: 4px;
+            }
+
+            @include max-breakpoint(extra-small) {
+                letter-spacing: 2px;
+            }
+
+            &:hover {
+                color: var(--color-tan);
+            }
+        }
+    }
+}

@@ -1,0 +1,385 @@
+body {
+    background: url('images/floral-sides.svg') no-repeat fixed center bottom;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+}
+
+.hero__inner {
+    height: 100%;
+}
+
+.hero__inner::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    position: absolute;
+    z-index: 1;
+}
+
+.hero__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+.hero__content {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    bottom: 79px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include max-breakpoint(tablet) {
+        bottom: 41px;   
+
+        h2 {
+            font-size: 34px;
+            line-height: 1;   
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.intro {
+    margin-top: 90px;
+
+    @include max-breakpoint(tablet) {
+        margin-top: 45px;
+    }
+}
+
+.intro__inner {
+    max-width: 1280px;
+    @include centerBox;
+    display: flex;
+
+    @include max-breakpoint(tablet) {
+        display: block;
+        padding: 0;
+    }
+}
+
+.intro__content {
+    max-width: 565px;
+    padding-top: 6px;
+    padding-left: 24px;
+
+    p {
+        margin-left: -1px;
+    }
+
+    @include max-breakpoint(desktop) {
+        max-width: 50%;
+        padding-left: 0;
+    }
+
+    @include max-breakpoint(tablet) {
+        max-width: 100%;
+        text-align: center;
+        padding-left: 22px;
+        padding-right: 24px;
+        padding-top: 0
+
+        h1 {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.intro__button {
+    margin-top: 16px;
+    margin-left: -1px;
+}
+
+.intro__images {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+
+    @include max-breakpoint(tablet) {
+        margin-top: 40px;
+        justify-content: space-between;
+        max-width: 575px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.intro__image {
+    flex: 1;
+    max-width: 100%;
+    height: auto;
+    
+    @include max-breakpoint(tablet) {
+        display: block;   
+    }
+}
+
+.intro__image1 {
+    margin-top: 126px;
+
+    @include max-breakpoint(tablet) {
+        margin-top: 45px;   
+    }
+}
+
+.intro__image-item {
+    margin-left: 50px;
+
+    @include max-breakpoint(desktop) {
+        margin-left: 20px;
+    }
+
+    @include max-breakpoint(tablet) {
+        margin-left: 0;
+
+        &:first-child {
+            margin-right: 26px;
+        }
+    }
+}
+
+.properties {
+    margin-top: 108px;
+
+    @include max-breakpoint(tablet) {
+        margin-top: 68px;   
+    }
+} 
+
+.properties__inner {
+    max-width: 1259px;
+    @include centerBox;
+
+    @include max-breakpoint(tablet) {
+        padding: 0;
+    }
+}
+
+.properties__item {
+    display: flex;
+    margin-bottom: 122px;
+
+    @include max-breakpoint(tablet) {
+        display: block;
+        margin-bottom: 80px;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.properties__headline {
+    margin-bottom: 56px;
+
+    @include max-breakpoint(tablet) {
+        margin-bottom: 16px;   
+    }
+}
+
+.properties__image {
+    position: relative;
+    overflow: hidden;
+
+    @include max-breakpoint(tablet) {
+        height: 438px;
+    }
+}
+
+.properties__image-zoom {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+    @include transition;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.properties__content {
+    max-width: 495px;
+
+    @include max-breakpoint(small-desktop) {
+        max-width: 50%;
+    }
+
+    @include max-breakpoint(tablet) {
+        max-width: 100%;   
+        text-align: center;
+        background-color: var(--color-nearwhite);
+    }
+}
+
+.properties__content-title {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-tan);
+    padding: 6px 7px;
+    text-align: center;
+    position: relative;
+    left: -56px;
+    top: 37px;
+    width: 524px;
+
+    @include max-breakpoint(small-desktop) {
+        max-width: 100%;
+    }
+
+    @include max-breakpoint(tablet) {
+        top: -40px;
+        width: 100%;
+        left: 0;
+        max-width: 298px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.properties__content-heading {
+    margin: 0;
+    padding-top: 10px;
+    border: 1px solid var(--color-tan);
+    letter-spacing: 0;
+    text-indent: 5px;
+    line-height: 57px;
+}
+
+.properties__content-text {
+    background-color: var(--color-nearwhite);
+    padding: 73px 69px 29px 60px;
+    margin-top: -6px;
+
+    p {
+        letter-spacing: .56px;
+    }
+
+    @include max-breakpoint(small-desktop) {
+        padding: 65px 20px 0px 20px;
+    }
+
+    @include max-breakpoint(tablet) {
+        padding: 0 15px 0;
+        margin-top: -5px;
+    }
+}
+
+.properties__button {
+    position: relative;
+    bottom: -46px;
+
+    @include max-breakpoint(small-desktop) {
+        bottom: -20px;
+    }
+}
+
+@include min-breakpoint(tablet) {
+    .properties__item--alt .properties__image {
+        order: 1;
+    }
+    
+    .properties__item--alt .properties__content-title {
+        left: unset;
+        right: -26px;
+    }
+    
+    .properties__item--alt .properties__content-text {
+        text-align: right;
+    }
+    
+    .properties__item--alt .properties__button {
+        margin-right: 1px;
+    }       
+}
+
+.properties__item--last {
+    margin-top: -1px;
+}
+
+.image-overlay {
+    margin-top: 139px;
+    height: 765px;
+    position: relative;
+
+    @include max-breakpoint(tablet) {
+        margin-top: 80px;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-black);
+        opacity: .2;
+        z-index: 1;
+    }
+}
+
+.image-overlay__inner {
+    width: 100%;
+    max-width: 919px;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    @include centerFlex;
+    @include centerBox;
+}
+
+.image-overlay__image {
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.image-overlay__content {
+    text-align: center;
+    margin-top: 25px;
+
+    h4, .button {
+        margin-left: 1px;
+    }
+
+    @include max-breakpoint(tablet) {
+        margin-top: 0;
+
+        h2 {
+            font-size: 34px;
+            line-height: 1;
+        }
+    }
+
+    @include max-breakpoint(mobile) {
+        h2 {
+            max-width: 244px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h4 {
+            max-width: 270px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

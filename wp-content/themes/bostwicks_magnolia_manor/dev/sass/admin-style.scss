@@ -1,0 +1,56 @@
+@import 'mixins/mixins';
+@import 'utilities/fonts';
+
+:root {
+    --color-dark: #404A3A;
+    --color-white: #FFF;
+    --color-black: #000;
+    --color-orange: #BE812C;
+    --color-tan: #C3B4A1;
+    --color-grey: #7D8B8D;
+    --color-offwhite: #E8E2DA;
+    --color-nearwhite: #FCFAF7;
+    --font-cgsemibold: 'cormorant_garamondsemibold';
+    --font-quentin: 'quentinregular';
+    --font-nsjpregular: 'noto_sans_jpregular';
+    --font-nsjpmedium: 'noto_sans_jpmedium'; 
+    --font-nsjplight: 'noto_sans_jplight';
+}
+
+.wp-block.editor-post-title {
+    max-width: 100%;
+}
+
+.wp-block {
+    max-width: 100%;
+}
+
+.editor-post-title {
+    background: #f3f3f4;
+}
+
+.block-editor-block-list__block {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.wp-block .acf-block-preview,
+.wp-block:not(.is-selected) .acf-block-component.acf-block-body {    
+    @import 'utilities/common';
+    @import "style";
+}
+
+.wp-block:not(.is-selected) .acf-block-component.acf-block-body .career-list .exp-app {
+    background-color: #FFDEDE!important;
+    color: #fff!important;
+}
+
+.wp-block.is-selected {
+    z-index: 10;
+    position: relative;
+}
+
+.wp-block button.components-button.block-editor-inserter__toggle {
+    position: relative;
+    z-index: 10;
+}
